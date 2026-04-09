@@ -15,11 +15,8 @@ The Cliff Walking environment is a grid-based task where the agent must navigate
 
 # Training Configuration
 
-Episodes: 250
-Seeds: 20 (for reproducibility)
-Learning rate (α): 0.1
-Discount factor (γ): 0.99
-Exploration rate (ε): starts at 0.1 and decays to 0.01
+The experiment uses 250 episodes and 20 seeds to ensure reproducibility. The learning rate (α) is set to 0.1 and the discount factor (γ) to 0.99. Exploration begins at ε = 0.1 and decays to 0.01. Both algorithms use NumPy-based Q-tables, updating values after each step using TD targets.
+
 
 Both algorithms maintain Q-tables using NumPy arrays indexed by (state, action). Updates occur after every step using TD targets:
 
@@ -27,13 +24,8 @@ Both algorithms maintain Q-tables using NumPy arrays indexed by (state, action).
 Q-learning uses the maximum Q-value of the next state
 
 # Key Features
-Online learning (step-by-step updates)
+Key features include online learning with step-by-step updates, ε-greedy action selection implemented using NumPy, and evaluation across multiple seeds to ensure reliable averaged learning curves. The project also provides clear visualizations of rewards, learned policies, and value functions, enabling effective comparison between SARSA and Q-learning performance.
 
-ε-greedy action selection using NumPy
-
-Multiple-seed evaluation with averaged learning curves
-
-Visualization of rewards, policies, and value functions
 
 # Results Summary
 
